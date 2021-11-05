@@ -15,7 +15,9 @@ function App() {
 
   return (
     <UserContext.Provider value={state.user}>
-      <ColorContext.Provider value={'red'}>
+      <ColorContext.Provider value={
+        {color: 'red'}
+      }>
         <ProfileComponent/>
       </ColorContext.Provider>
     </UserContext.Provider>
