@@ -6,12 +6,18 @@ const ContentDataComponent = () => {
   const color = React.useContext(ColorContext);
   const [currentColor, setCurrentColor] = React.useState(color.color);
 
+  const handleClick = e => {
+    e.preventDefault();
+
+    currentColor === 'red' ? setCurrentColor('black') : setCurrentColor('red')
+  };
+
   return (<>
     <ul style={{color: currentColor}}>
       <li>Nom: {user.name}</li>
       <li>Age: {user.age}</li>
     </ul>
-    <button onClick={() => currentColor === 'red' ? setCurrentColor('black') : setCurrentColor('red')}>Change color</button>
+    <button onClick={handleClick}>Change color</button>
   </>);
 };
 
